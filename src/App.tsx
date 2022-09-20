@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 // files
 import Home from "./pages/Home";
 import Packages from "./pages/Packages";
-import PackageItem from "./pages/PackageItem";
+import PackageItem from "./pages/PackageDetail";
 
 export default function App() {
   return (
