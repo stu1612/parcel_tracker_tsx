@@ -1,10 +1,21 @@
+// npm
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
 // files
-import useFetch from "./hooks/useFetch";
+import Home from "./pages/Home";
+import Packages from "./pages/Packages";
+import PackageItem from "./pages/PackageItem";
 
 export default function App() {
-  const { data, loading, error } = useFetch(
-    "https://my.api.mockaroo.com/insta-orders.json?key=e49e6840"
+  return (
+    <div className="App">
+      <Router>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/packages" element={<Packages />} />
+          <Route path="/package-item" element={<PackageItem />} />
+        </Routes>
+      </Router>
+    </div>
   );
-  console.log(data);
-  return <div className="App">hello react</div>;
 }
