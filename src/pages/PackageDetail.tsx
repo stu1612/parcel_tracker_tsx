@@ -1,5 +1,12 @@
-import React from "react";
+// npm
+import { useParams } from "react-router-dom";
 
 export default function PackageDetail() {
-  return <div>PackageItem</div>;
+  // properties
+  const { id } = useParams();
+  return (
+    <div>
+      <h1>{id}</h1>
+    </div>
+  );
 }
