@@ -1,5 +1,5 @@
 import React from "react";
 
-export default function PackageItem() {
+export default function PackageDetail() {
   return <div>PackageItem</div>;
 }
