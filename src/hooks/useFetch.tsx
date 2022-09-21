@@ -6,30 +6,42 @@ import iPackage from "../interfaces/iPackage";
 
 export default function useFetch(url: string) {
   const [data, setData] = useState(Array<iPackage>());
-  const [loading, setLoading] = useState<boolean | null>(null);
+  const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<boolean | string | null>(null);
 
   useEffect(() => {
-    const controller = new AbortController();
-    async function fetchURL(url: string) {
+    let cancelRequest = false;
+    if (!url) {
+      return;
+    }
+
+    const fetchRequest = async () => {
       setLoading(true);
-      setError(null);
       try {
-        const response = await fetch(url);
-        const data = await response.json();
-        setData(data);
-        setLoading(false);
-        setError(null);
+        const res = await fetch(url);
+        if (!res.ok) {
+          throw res;
+        }
+        const json = await res.json();
+        if (!cancelRequest) {
+          setData(json);
+          setLoading(false);
+          setError(null);
+        }
       } catch (err) {
-        setLoading(false);
-        if (err instanceof Error) {
-          setError(err.message);
+        if (!cancelRequest) {
+          if (err instanceof Error) {
+            setError(err.message);
+            setLoading(false);
+          }
         }
       }
-    }
-    fetchURL(url);
+    };
+
+    fetchRequest();
+
     return () => {
-      controller.abort();
+      cancelRequest = true;
     };
   }, [url]);
 
