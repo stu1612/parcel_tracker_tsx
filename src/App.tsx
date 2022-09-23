@@ -6,6 +6,8 @@ import Home from "./pages/Home";
 import Packages from "./pages/Packages";
 import PackageItem from "./pages/PackageDetail";
 
+import "./styles/main.scss";
+
 export default function App() {
   return (
     <div className="App">
