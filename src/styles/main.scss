@@ -1,2 +1,6 @@
-@import "./timeline.scss";
-@import "./packageItem.scss";
+// base
+@import "./base/reset";
+
+// components
+@import "./components/packageItem.scss";
+@import "./components/timeline.scss";
