@@ -5,9 +5,11 @@ export default function TimelineDelivered() {
   return (
     <div className="container">
       <div className="container__content">
-        <h2>Delivered</h2>
         <div className="container__content--icon">
-          <Icon icon="carbon:delivery-parcel" />
+          <Icon icon="carbon:delivery-parcel" height={30} />
+        </div>
+        <div className="container__content--title">
+          <h2>Delivered</h2>
         </div>
       </div>
       <ul className="timeline">

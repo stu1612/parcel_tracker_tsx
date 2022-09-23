@@ -2,16 +2,18 @@
 import { useState } from "react";
 
 // files
-import useFetch from "../hooks/useFetch";
+// import useFetch from "../hooks/useFetch";
 import PackageItem from "../components/PackageItem";
+import timeStamp from "../utils/timeStamp";
+import data from "../data/dummyApi.json";
 
 export default function Packages() {
   // local state
   const [query, setQuery] = useState("");
 
   // properties
-  const url = "https://my.api.mockaroo.com/insta-orders.json?key=e49e6840";
-  const { data, loading, error } = useFetch(url);
+  // const url = "https://my.api.mockaroo.com/insta-orders.json?key=e49e6840";
+  // const { data, loading, error } = useFetch(url);
 
   // methods
   const onChange = (event: any) => {
@@ -26,16 +28,25 @@ export default function Packages() {
       .map((item) => <PackageItem item={item} key={item.id} />);
 
   return (
-    <div>
-      {loading && <p>Loading ...</p>}
-      <div>
-        <h1>Search</h1>
-        <form>
-          <input type="string" id="query" value={query} onChange={onChange} />
-        </form>
-        {Packages}
+    <main className="main">
+      {/* {loading && <p>Loading ...</p>} */}
+      <div className="search">
+        <div className="search__content">
+          <p>{timeStamp(new Date())}</p>
+          <h1>Welcome Carl, see your parcels!</h1>
+          <form>
+            <input
+              type="string"
+              id="query"
+              value={query}
+              onChange={onChange}
+              placeholder="Search Package ID"
+            />
+          </form>
+        </div>
       </div>
-      {error && <p>{error}</p>}
-    </div>
+      {Packages}
+      {/* {error && <p>{error}</p>} */}
+    </main>
   );
 }

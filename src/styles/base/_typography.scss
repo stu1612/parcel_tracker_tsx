@@ -1,0 +1,9 @@
+@use "../abstracts" as a;
+
+.text-dark {
+  @include a.textFont(100, a.$cl-dark, 1.4rem, 1.2);
+}
+
+.heading-3 {
+  @include a.textFont(700, a.$cl-dark, 1.4rem, 1.2);
+}

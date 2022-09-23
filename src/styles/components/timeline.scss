@@ -1,10 +1,30 @@
+@use "../abstracts" as a;
+
 .container {
   width: min(90%, 600px);
   margin: 5rem auto;
   position: relative;
+
+  &__content {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    top: 20px;
+    width: 100%;
+
+    &--icon {
+      background-color: a.$cl-accent-green;
+      padding: 1rem;
+      border-radius: 8px;
+      margin-right: 2rem;
+    }
+  }
 }
 .timeline {
-  position: relative;
+  position: absolute;
+  top: 100px;
+  width: min(125%, 500px);
 }
 .timeline li {
   float: left;

@@ -5,6 +5,13 @@
   justify-content: $justify;
 }
 
+@mixin textFont($weight, $color, $size, $line) {
+  font-weight: $weight;
+  color: $color;
+  font-size: $size;
+  line-height: $line;
+}
+
 @mixin media-xs {
   @media screen and (min-width: 400px) {
     @content;

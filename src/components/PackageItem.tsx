@@ -1,5 +1,6 @@
 // npm
 import { Link } from "react-router-dom";
+import { Icon } from "@iconify/react";
 
 // files
 import iPackage from "../interfaces/iPackage";
@@ -12,16 +13,30 @@ interface iProps {
 
 export default function PackageItem({ item }: iProps) {
   // properties
-  const { status, parcel_id, eta } = item;
-  const Date = timeStamp(eta);
+  const { status, parcel_id, eta, last_updated } = item;
+  const ExpectedDate = timeStamp(eta);
+  const UpdatedDate = timeStamp(last_updated);
   const Timeline = convertStatus(status);
 
   return (
     <div className="package-container">
-      <h1>{parcel_id}</h1>
       {Timeline}
-      <p>Expected {Date}</p>
-      <Link to={`/package-item/${parcel_id}`}>See more</Link>
+      <div className="package-container__content">
+        <div className="timestamp">
+          <p className="text-dark">Updated </p>
+          <p className="heading-3">{UpdatedDate}</p>
+        </div>
+        <div className="timestamp">
+          <p className="text-dark">Expected </p>
+          <p className="heading-3">{ExpectedDate}</p>
+        </div>
+        <button type="button">
+          <Link to={`/package-item/${parcel_id}`} className="card-btn">
+            <Icon icon="akar-icons:circle-chevron-right" />
+            <span>{parcel_id}</span>
+          </Link>
+        </button>
+      </div>
     </div>
   );
 }
