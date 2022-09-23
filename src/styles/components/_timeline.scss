@@ -14,13 +14,26 @@
     width: 100%;
 
     &--icon {
-      background-color: a.$cl-accent-green;
       padding: 1rem;
       border-radius: 8px;
       margin-right: 2rem;
     }
+
+    .del {
+      background-color: a.$cl-accent-green;
+    }
+    .route {
+      background-color: a.$cl-accent-blue;
+    }
+    .recieved {
+      background-color: a.$cl-grey;
+    }
+    .pickup {
+      background-color: a.$cl-accent-orange;
+    }
   }
 }
+
 .timeline {
   position: absolute;
   top: 100px;

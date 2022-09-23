@@ -4,9 +4,13 @@ import { Icon } from "@iconify/react";
 export default function TimelineRoute() {
   return (
     <div className="container">
-      <h2>On Route</h2>
-      <div>
-        <Icon icon="carbon:delivery-truck" />
+      <div className="container__content">
+        <div className="container__content--icon route">
+          <Icon icon="carbon:delivery-truck" height={30} />
+        </div>
+        <div className="container__content--title">
+          <h2>On Route</h2>
+        </div>
       </div>
       <ul className="timeline">
         <li className="route"></li>

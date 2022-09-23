@@ -32,8 +32,8 @@ export default function PackageItem({ item }: iProps) {
         </div>
         <button type="button">
           <Link to={`/package-item/${parcel_id}`} className="card-btn">
-            <Icon icon="akar-icons:circle-chevron-right" />
-            <span>{parcel_id}</span>
+            <Icon icon="akar-icons:circle-chevron-right-fill" />
+            <span className="span">{parcel_id}</span>
           </Link>
         </button>
       </div>

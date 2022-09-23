@@ -1,11 +1,8 @@
 @use "../abstracts" as a;
 
 .card-btn {
-  position: absolute;
-  right: -50%;
-  background: a.$cl-accent-green;
+  background: a.$cl-grey;
   padding: 1rem 1.5rem;
-  bottom: 0;
   border-radius: 8px;
   display: flex;
   flex-direction: row;

@@ -15,6 +15,8 @@
     left: 20px;
     display: flex;
     flex-direction: row;
+    width: 90%;
+    justify-content: space-between;
 
     .timestamp {
       display: flex;
@@ -24,5 +26,9 @@
         margin-right: 2rem;
       }
     }
+  }
+
+  .span {
+    margin-left: 0.5rem;
   }
 }
