@@ -10,6 +10,7 @@ type StatusProps = {
 
 interface PackageProps {
   packages: iPackage[];
+
   loading: boolean;
   error: boolean | string | null;
 }

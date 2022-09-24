@@ -5,13 +5,18 @@ import PackageItem from "../components/PackageItem";
 import data from "../data/dummyApi.json";
 import Header from "../components/Header";
 import SideNav from "../components/SideNav";
+import iPackage from "../interfaces/iPackage";
+
+// export interface iData {
+//   data: iPackage;
+// }
 
 export default function Packages() {
   // global state
   const { query } = useQuery();
   // properties
-  // const url = "https://my.api.mockaroo.com/insta-orders.json?key=e49e6840";
-  // const { data, loading, error } = useFetch(url);
+  const url = "https://my.api.mockaroo.com/insta-orders.json?key=e49e6840";
+  const { data, loading, error } = useFetch(url);
 
   // components
   const Packages =
@@ -24,7 +29,7 @@ export default function Packages() {
     <main className="main">
       {/* {loading && <p>Loading ...</p>} */}
       <Header />
-      <SideNav />
+      <SideNav  />
       <div className="grid">{Packages}</div>
       {/* {error && <p>{error}</p>} */}
     </main>

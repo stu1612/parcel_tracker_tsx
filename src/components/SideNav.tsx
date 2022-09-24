@@ -1,7 +1,21 @@
 // files
 import SearchInput from "./SearchInput";
+import iPackage from "../interfaces/iPackage";
+// import { iData } from "../pages/Packages";
+import usePackageContext from "../hooks/usePackage";
 
 export default function SideNav() {
+  const { packages } = usePackageContext();
+  console.log(packages);
+
+  function Counter(data: any, status: string) {
+    let counter: any = "";
+    for (const obj of data) {
+      if (obj.status === status) counter++;
+    }
+    return counter;
+  }
+
   return (
     <div className="wrapper">
       <div className="sidebar">
@@ -17,7 +31,12 @@ export default function SideNav() {
           <li>
             <SearchInput />
           </li>
-          <li></li>
+          <li style={{ color: "white", fontSize: 10 }}>
+            Delivered: {Counter(packages, "delivered")}
+          </li>
+          <li style={{ color: "white", fontSize: 10 }}>
+            Pickup: {Counter(packages, "ready-for-pickup")}
+          </li>
         </ul>
       </div>
     </div>
