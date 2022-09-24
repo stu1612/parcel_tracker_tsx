@@ -2,7 +2,15 @@
 
 .main {
   width: 100%;
-  margin: 0 auto;
+  position: relative;
+  // margin: 0 auto;
+
+  .grid {
+    display: grid;
+    width: min(90%, 1200px);
+    margin: 5rem auto;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  }
 }
 
 .search {
@@ -27,19 +35,30 @@
       font-size: 1.2rem;
     }
   }
+}
 
-  form {
-    display: flex;
-    justify-content: center;
-    margin: 2rem 0;
+form {
+  display: flex;
+  justify-content: center;
+  margin: 2rem 0;
 
-    input {
-      background-color: a.$cl-primary-300;
-      outline: 0;
-      border: 0;
-      padding: 1.5rem 2rem;
-      border-radius: 15px;
-      width: min(95%, 500px);
+  input {
+    background-color: a.$cl-primary-300;
+    outline: 0;
+    border: 0;
+    padding: 1.5rem 2rem;
+    border-radius: 15px;
+    width: min(95%, 500px);
+  }
+}
+
+@include a.media-lg {
+  .main {
+    .grid {
+      width: 60%;
     }
+  }
+  .search {
+    display: none;
   }
 }

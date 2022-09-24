@@ -10,7 +10,7 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    top: 20px;
+    top: -25px;
     width: 100%;
 
     &--icon {
@@ -36,7 +36,7 @@
 
 .timeline {
   position: absolute;
-  top: 100px;
+  top: 60px;
   width: min(125%, 500px);
 }
 .timeline li {
