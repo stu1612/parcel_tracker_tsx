@@ -1,16 +1,20 @@
-interface searchProps {
-  query: string;
-  onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
-}
+// interface searchProps {
+//   query: string;
+//   onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+// }
 
-export default function SearchInput({ onChange, query }: searchProps) {
+import useQuery from "../hooks/useQuery";
+
+// export default function SearchInput({ onChange, query }: searchProps) {
+export default function SearchInput() {
+  const { query, queryChangeHandler } = useQuery();
   return (
     <form>
       <input
         type="string"
         id="query"
         value={query}
-        onChange={onChange}
+        onChange={queryChangeHandler}
         placeholder="Search Package ID"
       />
     </form>
