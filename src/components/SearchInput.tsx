@@ -1,11 +1,6 @@
-// interface searchProps {
-//   query: string;
-//   onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
-// }
-
+// files
 import useQuery from "../hooks/useQuery";
 
-// export default function SearchInput({ onChange, query }: searchProps) {
 export default function SearchInput() {
   const { query, queryChangeHandler } = useQuery();
   return (
