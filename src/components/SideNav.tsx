@@ -17,7 +17,7 @@ export default function SideNav() {
             alt="profile_picture"
             className="profile-image"
           />
-          <h3 className="sidebar__profile--title">Carl</h3>
+          <h3 className="heading-2">Carl</h3>
         </div>
         <ul>
           <li>

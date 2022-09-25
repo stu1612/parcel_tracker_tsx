@@ -19,12 +19,12 @@ export default function Packages() {
       .map((item) => <PackageItem item={item} key={item.id} />);
 
   return (
-    <main className="main">
+    <section className="packages">
       {/* {loading && <p>Loading ...</p>} */}
       <Header />
       <SideNav />
-      <div className="grid">{Packages}</div>
+      <main className="grid">{Packages}</main>
       {/* {error && <p>{error}</p>} */}
-    </main>
+    </section>
   );
 }

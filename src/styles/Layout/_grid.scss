@@ -1,0 +1,14 @@
+@use "../abstracts" as a;
+
+.grid {
+  display: grid;
+  width: min(100%, 1200px);
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+}
+
+@include a.media-lg {
+  .grid {
+    width: 60%;
+    margin-left: 30rem;
+  }
+}

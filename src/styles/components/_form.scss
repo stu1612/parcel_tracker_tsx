@@ -1,0 +1,16 @@
+@use "../abstracts" as a;
+
+form {
+  display: flex;
+  justify-content: center;
+  margin: 2rem 0;
+
+  input {
+    background-color: a.$cl-primary-300;
+    outline: 0;
+    border: 0;
+    padding: 1.5rem 2rem;
+    border-radius: 25px;
+    width: min(95%, 500px);
+  }
+}
