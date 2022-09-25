@@ -1,0 +1,19 @@
+@use "../abstracts" as a;
+
+.sub-header {
+  background: a.$cl-primary-500;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 8rem;
+  color: a.$cl-light;
+  padding: 0 2rem;
+}
+
+.container {
+  width: 90%;
+  margin: 2rem auto;
+  background: rgb(182, 225, 145);
+  height: 600px;
+  border-radius: 15px;
+}

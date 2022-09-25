@@ -31,7 +31,11 @@ export default function PackageItem({ item }: iProps) {
           <p className="heading-3">{ExpectedDate}</p>
         </div>
         <button type="button">
-          <Link to={`/package-item/${parcel_id}`} className="card-btn">
+          <Link
+            to={`/package-item/${parcel_id}`}
+            className="card-btn"
+            state={item}
+          >
             <Icon icon="akar-icons:circle-chevron-right-fill" />
             <span className="span">{parcel_id}</span>
           </Link>
