@@ -23,6 +23,25 @@
       margin: 10px 0 5px;
     }
   }
+
+  ul li {
+    // display: block;
+    padding: 13px 30px;
+    color: rgb(241, 237, 237);
+    font-size: 16px;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+  }
+}
+
+.icon {
+  color: #dde6f3;
+  width: 30px;
+  display: inline-block;
+  margin-right: 1rem;
 }
 
 .profile-image {

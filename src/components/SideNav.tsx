@@ -1,20 +1,12 @@
+// npm
+import { Icon } from "@iconify/react";
 // files
 import SearchInput from "./SearchInput";
-import iPackage from "../interfaces/iPackage";
-// import { iData } from "../pages/Packages";
 import usePackageContext from "../hooks/usePackage";
+import Counter from "../utils/counter";
 
 export default function SideNav() {
   const { packages } = usePackageContext();
-  console.log(packages);
-
-  function Counter(data: any, status: string) {
-    let counter: any = "";
-    for (const obj of data) {
-      if (obj.status === status) counter++;
-    }
-    return counter;
-  }
 
   return (
     <div className="wrapper">
@@ -31,11 +23,37 @@ export default function SideNav() {
           <li>
             <SearchInput />
           </li>
-          <li style={{ color: "white", fontSize: 10 }}>
-            Delivered: {Counter(packages, "delivered")}
+          <li>
+            <span className="icon">
+              <Icon icon="carbon:delivery-parcel" height={30} />
+            </span>
+            <span className="item">
+              Delivered: {Counter(packages, "delivered")}
+            </span>
           </li>
-          <li style={{ color: "white", fontSize: 10 }}>
-            Pickup: {Counter(packages, "ready-for-pickup")}
+          <li>
+            <span className="icon">
+              <Icon icon="fluent:select-all-on-24-filled" height={30} />
+            </span>
+            <span className="item">
+              Pickup: {Counter(packages, "ready-for-pickup")}
+            </span>
+          </li>
+          <li>
+            <span className="icon">
+              <Icon icon="carbon:delivery-truck" height={30} />
+            </span>
+            <span className="item">
+              On Route: {Counter(packages, "on-the-way")}
+            </span>
+          </li>
+          <li>
+            <span className="icon">
+              <Icon icon="ri:folder-received-fill" height={30} />
+            </span>
+            <span className="item">
+              Received: {Counter(packages, "order-info-received")}
+            </span>
           </li>
         </ul>
       </div>
