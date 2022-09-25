@@ -9,6 +9,15 @@
   color: a.$cl-light;
 }
 
+.text-bold {
+  @extend .text-dark;
+  font-weight: 700;
+}
+
+.heading-1 {
+  @include a.textFont(700, a.$cl-light, 2.2rem, 1.8);
+}
+
 .heading-2 {
   @include a.textFont(700, a.$cl-light, 1.8rem, 1.2);
 }

@@ -1,6 +1,5 @@
 // npm
 import { createContext, useState, useEffect } from "react";
-import useFetch from "../hooks/useFetch";
 
 import iPackage from "../interfaces/iPackage";
 
@@ -9,8 +8,7 @@ type StatusProps = {
 };
 
 interface PackageProps {
-  packages: iPackage[];
-
+  data: iPackage[];
   loading: boolean;
   error: boolean | string | null;
 }
@@ -18,7 +16,7 @@ interface PackageProps {
 export const PackageContext = createContext<PackageProps | null>(null);
 
 export default function PackageProvider({ children }: StatusProps) {
-  const [packages, setPackages] = useState<iPackage[]>([]);
+  const [data, setData] = useState<iPackage[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<boolean | string | null>(null);
 
@@ -36,7 +34,7 @@ export default function PackageProvider({ children }: StatusProps) {
         }
         const json = await res.json();
         if (!cancelRequest) {
-          setPackages(json);
+          setData(json);
           setLoading(false);
           setError(null);
         }
@@ -56,7 +54,7 @@ export default function PackageProvider({ children }: StatusProps) {
   }, []);
 
   return (
-    <PackageContext.Provider value={{ packages, loading, error }}>
+    <PackageContext.Provider value={{ data, loading, error }}>
       {children}
     </PackageContext.Provider>
   );

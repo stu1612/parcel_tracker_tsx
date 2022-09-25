@@ -1,5 +1,20 @@
 @use "../abstracts" as a;
 
+.home-btn {
+  background: #fff;
+  padding: 2rem 4rem;
+  border-radius: 100px;
+  margin: 3rem 0;
+
+  &__link {
+    @include a.flex(row, center, center);
+
+    span {
+      margin-left: 3rem;
+    }
+  }
+}
+
 .card-btn {
   border: 2px solid a.$cl-grey;
   padding: 1rem 1.5rem;

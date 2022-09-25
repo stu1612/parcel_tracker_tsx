@@ -7,7 +7,7 @@ import Counter from "../utils/counter";
 import links from "../data/links.json";
 
 export default function SideNav({ show }: any) {
-  const { packages } = usePackageContext();
+  const { data } = usePackageContext();
 
   return (
     <div className="wrapper">
@@ -36,7 +36,7 @@ export default function SideNav({ show }: any) {
                     <Icon icon={icon} height={height} />
                   </span>
                   <span className="item">
-                    {label}: {Counter(packages, status)}
+                    {label}: {Counter(data, status)}
                   </span>
                 </li>
               );

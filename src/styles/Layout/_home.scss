@@ -3,6 +3,7 @@
 .welcome {
   height: 100vh;
   background: a.$cl-primary-500;
+  text-align: center;
 
   &__image {
     height: 40vh;
@@ -14,10 +15,23 @@
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
-    padding: 2rem;
   }
 
   &__content {
     @include a.flex(column, center, center);
+
+    h1 {
+      margin: 5rem 0 3rem 0;
+    }
+  }
+}
+
+@include a.media-lg {
+  .welcome {
+    @include a.flex(column, center, center);
+
+    &__image {
+      background-color: a.$cl-primary-500;
+    }
   }
 }

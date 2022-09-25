@@ -13,7 +13,7 @@ export default function Packages() {
   const [show, setShow] = useState(true);
   // global state
   const { query } = useQuery();
-  // const { packages } = usePackageContext();
+  // const { data, loading, error } = usePackageContext();
 
   // components
   const Packages =
