@@ -10,10 +10,33 @@
   padding: 0 2rem;
 }
 
-.container {
+.detail {
   width: 90%;
   margin: 2rem auto;
-  background: rgb(182, 225, 145);
-  height: 600px;
-  border-radius: 15px;
+  height: 100%;
+  border-radius: 24px;
+  border: 1px solid black;
+  //   box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+
+  &__wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 2rem;
+
+    .item:nth-child(1) {
+      margin-bottom: 1rem;
+    }
+
+    .icons {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+
+      .id {
+        margin-right: 1rem;
+      }
+    }
+  }
 }

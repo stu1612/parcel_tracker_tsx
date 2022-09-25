@@ -24,11 +24,11 @@ export default function PackageItem({ item }: iProps) {
       <div className="package-container__content">
         <div className="timestamp">
           <p className="text-dark">Updated </p>
-          <p className="heading-3">{UpdatedDate}</p>
+          <h2 className="heading-3">{UpdatedDate}</h2>
         </div>
         <div className="timestamp">
           <p className="text-dark">Expected </p>
-          <p className="heading-3">{ExpectedDate}</p>
+          <h2 className="heading-3">{ExpectedDate}</h2>
         </div>
         <button type="button">
           <Link

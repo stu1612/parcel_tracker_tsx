@@ -1,13 +1,13 @@
 // npm
-import { useParams } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import { Icon } from "@iconify/react";
+import Map from "../components/Map";
 
 export default function PackageDetail() {
   // properties
-  const { id } = useParams();
   const location = useLocation();
-  const { location_name, sender } = location.state;
+  const { location_name, sender, verification_required, parcel_id } =
+    location.state;
   return (
     <main className="main">
       <header className="sub-header">
@@ -17,33 +17,40 @@ export default function PackageDetail() {
           className="icon"
         />
         <h1>
-          Parcel <span>{id}</span>
+          Parcel <span>{parcel_id}</span>
         </h1>
       </header>
-      <div className="container">
-        <div className="container__wrapper">
-          <div className="container__wrapper--left">
-            <div className="location">
-              <h2>Location</h2>
-              <p>{location_name}</p>
+      <div className="detail">
+        <div className="detail__wrapper">
+          <div className="detail__wrapper--left">
+            <div className="item">
+              <p className="text-dark">Location</p>
+              <h2 className="heading-3">{location_name}</h2>
             </div>
-            <div className="sender">
-              <h2>Sender</h2>
-              <p>{sender}</p>
+            <div className="item">
+              <p className="text-dark">Sender</p>
+              <h2 className="heading-3">{sender}</h2>
             </div>
           </div>
-          <div className="container__wrapper--right">
-            <div className="id">
-              <h2>Identification</h2>
+          <div className="detail__wrapper--right">
+            <div className="item">
+              <p className="text-dark">Identification</p>
             </div>
-            <div className="id-notice">
-              <Icon icon="fa6-solid:id-card" />
-              {/* ternary */}
-              <Icon icon="teenyicons:tick-circle-solid" />
-              <Icon icon="entypo:circle-with-cross" />
+            <div className="item icons">
+              <Icon icon="fa6-solid:id-card" height={20} className="id" />
+              {verification_required ? (
+                <Icon
+                  icon="teenyicons:tick-circle-solid"
+                  height={30}
+                  color="green"
+                />
+              ) : (
+                <Icon icon="entypo:circle-with-cross" height={30} color="red" />
+              )}
             </div>
           </div>
         </div>
+        <Map location={location} />
       </div>
     </main>
   );
