@@ -4,6 +4,7 @@ import { Icon } from "@iconify/react";
 import SearchInput from "./SearchInput";
 import usePackageContext from "../hooks/usePackage";
 import Counter from "../utils/counter";
+import links from "../data/links.json";
 
 export default function SideNav() {
   const { packages } = usePackageContext();
@@ -23,38 +24,20 @@ export default function SideNav() {
           <li>
             <SearchInput />
           </li>
-          <li>
-            <span className="icon">
-              <Icon icon="carbon:delivery-parcel" height={30} />
-            </span>
-            <span className="item">
-              Delivered: {Counter(packages, "delivered")}
-            </span>
-          </li>
-          <li>
-            <span className="icon">
-              <Icon icon="fluent:select-all-on-24-filled" height={30} />
-            </span>
-            <span className="item">
-              Pickup: {Counter(packages, "ready-for-pickup")}
-            </span>
-          </li>
-          <li>
-            <span className="icon">
-              <Icon icon="carbon:delivery-truck" height={30} />
-            </span>
-            <span className="item">
-              On Route: {Counter(packages, "on-the-way")}
-            </span>
-          </li>
-          <li>
-            <span className="icon">
-              <Icon icon="ri:folder-received-fill" height={30} />
-            </span>
-            <span className="item">
-              Received: {Counter(packages, "order-info-received")}
-            </span>
-          </li>
+          {links &&
+            links.map((link) => {
+              const { id, icon, height, label, status } = link;
+              return (
+                <li key={id}>
+                  <span className="icon">
+                    <Icon icon={icon} height={height} />
+                  </span>
+                  <span className="item">
+                    {label}: {Counter(packages, status)}
+                  </span>
+                </li>
+              );
+            })}
         </ul>
       </div>
     </div>

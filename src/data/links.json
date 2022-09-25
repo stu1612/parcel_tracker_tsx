@@ -1,0 +1,30 @@
+[
+  {
+    "id": 0,
+    "icon": "carbon:delivery-parcel",
+    "height": 30,
+    "label": "Delivered",
+    "status": "delivered"
+  },
+  {
+    "id": 1,
+    "icon": "fluent:select-all-on-24-filled",
+    "height": 30,
+    "label": "Pickup",
+    "status": "ready-for-pickup"
+  },
+  {
+    "id": 2,
+    "icon": "carbon:delivery-truck",
+    "height": 30,
+    "label": "On Route",
+    "status": "on-the-way"
+  },
+  {
+    "id": 3,
+    "icon": "ri:folder-received-fill",
+    "height": 30,
+    "label": "Received",
+    "status": "order-info-received"
+  }
+]
