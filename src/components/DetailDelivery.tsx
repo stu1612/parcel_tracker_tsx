@@ -1,4 +1,9 @@
-export default function DetailDelivery() {
+// npm
+import { Icon } from "@iconify/react";
+
+export default function DetailDelivery({ location }: any) {
+  const { location_name, sender, verification_required } = location.state;
+
   return (
     <div className="detail">
       <div className="detail__wrapper">
