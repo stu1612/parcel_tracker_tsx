@@ -51,6 +51,24 @@ export default function PackageDetail() {
           </div>
         </div>
         <Map location={location} />
+        <div className="detail__info">
+          <h2>History</h2>
+          <div className="item">
+            <h2>28 Feb</h2>
+            <p>Package Information updated</p>
+          </div>
+          <div className="item">
+            <h2>28 Feb</h2>
+            <p>Pcakage expected</p>
+          </div>
+          <div className="notes">
+            <h2>Notes</h2>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa,
+              explicabo.
+            </p>
+          </div>
+        </div>
       </div>
     </main>
   );

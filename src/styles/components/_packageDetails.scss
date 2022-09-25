@@ -39,4 +39,16 @@
       }
     }
   }
+
+  &__info {
+    padding: 2rem;
+
+    .item {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      margin: 2rem 0;
+    }
+  }
 }
