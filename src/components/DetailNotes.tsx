@@ -3,13 +3,15 @@ import timeStamp from "../utils/timeStamp";
 
 export default function DetailNotes({ location }: any) {
   // properties
-  const { eta, last_updated, notes } = location.state;
+  const { eta, last_updated, notes, parcel_id } = location.state;
 
   const expectedDate = timeStamp(eta);
   const updatedDate = timeStamp(last_updated);
   return (
     <div className="detail__info">
-      <h2>History</h2>
+      <h2>
+        History <span>#{parcel_id}</span>
+      </h2>
       <div className="item">
         <h2>{updatedDate}</h2>
         <p>Package Information updated</p>

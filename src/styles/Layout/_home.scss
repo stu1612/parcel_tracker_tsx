@@ -1,0 +1,23 @@
+@use "../abstracts" as a;
+
+.welcome {
+  height: 100vh;
+  background: a.$cl-primary-500;
+
+  &__image {
+    height: 40vh;
+    width: 100%;
+    background-color: a.$cl-primary-300;
+    border-bottom-left-radius: 20%;
+    border-bottom-right-radius: 20%;
+    background-image: url("../../assets/banner.svg");
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    padding: 2rem;
+  }
+
+  &__content {
+    @include a.flex(column, center, center);
+  }
+}

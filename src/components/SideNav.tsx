@@ -6,7 +6,7 @@ import usePackageContext from "../hooks/usePackage";
 import Counter from "../utils/counter";
 import links from "../data/links.json";
 
-export default function SideNav() {
+export default function SideNav({ show }: any) {
   const { packages } = usePackageContext();
 
   return (
@@ -21,9 +21,12 @@ export default function SideNav() {
           <h3 className="heading-2">Carl</h3>
         </div>
         <ul>
-          <li>
-            <SearchInput />
-          </li>
+          {show && (
+            <li>
+              <SearchInput />
+            </li>
+          )}
+
           {links &&
             links.map((link) => {
               const { id, icon, height, label, status } = link;

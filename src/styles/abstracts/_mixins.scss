@@ -12,44 +12,8 @@
   line-height: $line;
 }
 
-@mixin media-xs {
-  @media screen and (min-width: 400px) {
-    @content;
-  }
-}
-
-@mixin media-sm {
-  @media screen and (min-width: 600px) {
-    @content;
-  }
-}
-
-@mixin media-md {
-  @media screen and (min-width: 768px) {
-    @content;
-  }
-}
-
 @mixin media-lg {
   @media screen and (min-width: 960px) {
-    @content;
-  }
-}
-
-@mixin media-xl {
-  @media screen and (min-width: 1024px) {
-    @content;
-  }
-}
-
-@mixin media-xxl {
-  @media screen and (min-width: 1200px) {
-    @content;
-  }
-}
-
-@mixin media-xxxl {
-  @media screen and (min-width: 1600px) {
     @content;
   }
 }

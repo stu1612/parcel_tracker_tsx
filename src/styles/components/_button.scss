@@ -1,11 +1,37 @@
 @use "../abstracts" as a;
 
 .card-btn {
-  background: a.$cl-grey;
+  border: 2px solid a.$cl-grey;
   padding: 1rem 1.5rem;
   border-radius: 8px;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    background: a.$cl-grey;
+  }
+}
+
+.detail-btn {
+  display: none;
+  position: absolute;
+  top: 400px;
+  left: 37%;
+  border: 2px solid a.$cl-primary-500;
+  padding: 1rem 2rem;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    background-color: a.$cl-primary-500;
+    color: a.$cl-light;
+  }
+}
+
+@include a.media-lg {
+  .detail-btn {
+    display: block;
+  }
 }
