@@ -50,7 +50,7 @@ export default function PackageProvider({ children }: StatusProps) {
         cancelRequest = true;
       };
     };
-    // fetchData("https://my.api.mockaroo.com/insta-orders.json?key=e49e6840");
+    fetchData("https://my.api.mockaroo.com/insta-orders.json?key=e49e6840");
   }, []);
 
   return (

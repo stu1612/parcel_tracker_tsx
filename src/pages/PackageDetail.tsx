@@ -15,6 +15,7 @@ export default function PackageDetail() {
   const navigate = useNavigate();
   const location = useLocation();
   const { parcel_id } = location.state;
+
   return (
     <section className="details-page">
       <header className="details-page__header">

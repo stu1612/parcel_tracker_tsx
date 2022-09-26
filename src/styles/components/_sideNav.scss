@@ -18,21 +18,18 @@
     margin-bottom: 30px;
     text-align: center;
 
-    &--title {
-      color: #ffffff;
+    h3 {
+      color: a.$cl-light;
       margin: 10px 0 5px;
     }
   }
 
   ul li {
     padding: 13px 30px;
-    color: rgb(241, 237, 237);
+    color: a.$cl-light;
     font-size: 16px;
     position: relative;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
+    @include a.flex(row, center, flex-start);
   }
 }
 
